@@ -1,1 +1,8 @@
 .env*
+node_modules/
+dist/
+bin/
+obj/
+*.tsbuildinfo
+.DS_Store
+appsettings.json*
