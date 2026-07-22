@@ -8,3 +8,5 @@ obj/
 # Keep the credential-free base configuration in source control, but ignore
 # developer/environment overrides that may contain local secrets.
 appsettings.*.json
+
+local-stack/volume
