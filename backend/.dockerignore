@@ -1,0 +1,34 @@
+# Build output
+**/bin/
+**/obj/
+**/publish/
+
+# Source-control and editor metadata
+.git/
+.github/
+.vs/
+.vscode/
+.idea/
+
+# Test and coverage output
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# Local configuration and secrets
+.env
+.env.*
+**/appsettings.*.json
+*.user
+*.suo
+**/*.pfx
+**/*.p12
+**/*.pem
+**/*.key
+
+# Local documentation and orchestration files
+README*
+docker-compose*.yml
+docker-compose*.yaml

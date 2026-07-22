@@ -5,8 +5,13 @@ using OrderFlow.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var ordersConnectionString = builder.Configuration.GetConnectionString("Orders")
+    ?? throw new InvalidOperationException(
+        "The Orders database connection string is required. " +
+        "Set it with the ConnectionStrings__Orders environment variable.");
+
 builder.Services.AddDbContext<OrdersDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Orders")));
+    options.UseNpgsql(ordersConnectionString));
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddProblemDetails();
