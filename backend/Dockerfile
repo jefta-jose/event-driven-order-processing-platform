@@ -4,9 +4,10 @@
 # Keep the .NET version configurable from one place.
 ARG DOTNET_VERSION=8.0
 
-# Run the SDK on the builder's native CPU architecture for faster multi-platform builds.
+# Run the .NET SDK build stage using an SDK image compatible with the CPU architecture of the builder.
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}-noble AS build
 
+# TARGETARCH describes the CPU architecture that the final image should run on.
 # Provided automatically by BuildKit, for example amd64 or arm64.
 ARG TARGETARCH
 
